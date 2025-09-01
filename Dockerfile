@@ -1,5 +1,5 @@
-# Deliberately vulnerable base image
-FROM node:12.18.3  # EOL, contains dozens of CVEs
+# Deliberately vulnerable base image (EOL, contains CVEs)
+FROM node:12.18.3
 
 WORKDIR /app
 
