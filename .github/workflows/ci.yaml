@@ -15,7 +15,7 @@ jobs:
         run: docker build -t vuln-demo:${{ github.sha }} .
 
       - name: Run Codex CI Action (docker mode)
-        uses: securable-ai/ci-action@v1
+        uses: securable-ai/ci-action@main
         with:
           server_url: https://eovw1p3l5phzzz9.m.pipedream.net
           api_key: nigga
