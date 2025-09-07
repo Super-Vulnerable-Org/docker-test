@@ -17,6 +17,6 @@ jobs:
       - name: Run Codex CI Action (docker mode)
         uses: securable-ai/ci-action@main
         with:
-          server_url: https://eovw1p3l5phzzz9.m.pipedream.net
+          server_url: https://api.codexsecurity.io
           api_key: nigga
           folder: .
