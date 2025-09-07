@@ -19,4 +19,6 @@ jobs:
         with:
           server_url: https://api.codexsecurity.io
           api_key: 36rn2KdvsMRrhOpME85LKWPlINfI6Wzb
+          repo_url: https://github.com/${{ github.repository }}.git
+          scan_types: SCA
           folder: .
