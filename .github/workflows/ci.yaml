@@ -18,7 +18,7 @@ jobs:
         uses: securable-ai/ci-action@main
         with:
           server_url: https://api.codexsecurity.io
-          api_key: 36rn2KdvsMRrhOpME85LKWPlINfI6Wzb
+          api_key: yDqEcKBwtkiXdmBx1ecJl4M0wkpHZaqf
           repo_url: https://github.com/${{ github.repository }}.git
           scan_types: SCA
           folder: .
