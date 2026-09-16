@@ -1,24 +1,25 @@
-name: Codex SCA Test
+name: Build, Scan, Push
 
 on:
-  pull_request:
   push:
-    branches: [ main ]
- 
+  workflow_dispatch:
+
 jobs:
-  scan:
+  build-scan-push:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-    
-      - name: Run Codex CI Action (docker mode)
-        uses: securable-ai/ci-action@main
-        with:
-          server_url: https://api.codexsecurity.io
-          api_key: yDqEcKBwtkiXdmBx1ecJl4M0wkpHZaqf
-          repo_url: https://github.com/${{ github.repository }}.git
-          scan_types: SCA
-          folder: .
-          
-      - name: Build vulnerable image
+
+      - name: Build image
         run: docker build -t vuln-demo:${{ github.sha }} .
+
+      - uses: o3security/gate-image@main
+        with:
+          server_url: https://api.o3.security
+          api_key: ${{ secrets.O3_API_KEY }}
+          image_name: vuln-demo:${{ github.sha }}
+          scan_types: SCA,SECRET
+          fail_on_policy: true
+
+      - name: Push image
+        run: echo "Gate passed — would docker push vuln-demo:${{ github.sha }}"

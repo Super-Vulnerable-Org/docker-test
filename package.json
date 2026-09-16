@@ -4,6 +4,9 @@
   "description": "Demo project with vulnerable deps for Codex SCA Action",
   "main": "index.js",
   "dependencies": {
-    "lodash": "4.17.19"
+    "lodash": "4.17.19",
+    "minimist": "0.0.8",
+    "node-serialize": "0.0.4",
+    "ejs": "2.5.5"
   }
 }
